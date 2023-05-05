@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Xml.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
@@ -60,8 +61,21 @@ namespace WebApiDemo.Controllers
             }
 		}
 
-		// GET: api/TodoItems/5
-		[HttpGet("{id}")]
+        [HttpGet("image")]
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetImage()
+        {
+            string imgPath = "D:\\Project\\WebServer\\WebApiDemo\\WebAsset\\123.jpg";
+            using (var sw = new FileStream(imgPath, FileMode.Open))
+            {
+                var bytes = new byte[sw.Length];
+                sw.Read(bytes, 0, bytes.Length);
+                sw.Close();
+                return new FileContentResult(bytes, "image/jpeg");
+            }
+        }
+
+        // GET: api/TodoItems/5
+        [HttpGet("{id}")]
         public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
         {
           if (_context.TodoItems == null)
