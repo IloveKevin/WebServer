@@ -74,6 +74,19 @@ namespace WebApiDemo.Controllers
             }
         }
 
+        [HttpGet("image/test")]
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetImageTest()
+        {
+            string imgPath = "D:\\Project\\WebServer\\WebApiDemo\\WebAsset\\321.mp4";
+            using (var sw = new FileStream(imgPath, FileMode.Open))
+            {
+                var bytes = new byte[sw.Length];
+                sw.Read(bytes, 0, bytes.Length);
+                sw.Close();
+                return new FileContentResult(bytes, "Video/mp4");
+            }
+        }
+
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
