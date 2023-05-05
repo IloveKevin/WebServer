@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
@@ -26,37 +30,34 @@ namespace WebApiDemo.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
-			byte[] buffer = new byte[4096];
-			using (FileStream fs = new FileStream("D:\\ChinaChess\\Chinesechess-master\\index.html", FileMode.Open, FileAccess.Read))
+            if (_context.TodoItems == null)
             {
-          
-                int bytesRead;
-                while ((bytesRead = fs.Read(buffer, 0, buffer.Length)) > 0) { }
+                return NotFound();
             }
-            return File(buffer, "application/octet-stream", System.Web.HttpUtility.UrlDecode("下载.html"));
-			//if (_context.TodoItems == null)
-   //       {
-   //           return NotFound();
-   //       }
-   //         return await _context.TodoItems.ToListAsync();
+            return await _context.TodoItems.ToListAsync();
         }
 		[HttpGet("download")]
-		public FileResult downloadRequest()
+		public async Task<ActionResult<IEnumerable<TodoItem>>> DownloadRequest()
 		{
-			//var addrUrl = webRootPath + "/upload/thumb.jpg";
-			var addrUrl = "C:\\Users\\80441\\Desktop\\Test\\123.png";
-
-			var stream = System.IO.File.OpenRead(addrUrl);
-
-			string fileExt = Path.GetExtension("thumb.jpg");
-
-			//获取文件的ContentType
-
-			var provider = new FileExtensionContentTypeProvider();
-
-			var memi = provider.Mappings[fileExt];
-
-			return File(stream, memi, Path.GetFileName(addrUrl));
+            string fileUrl="";
+            foreach(var s in Request.GetDisplayUrl().Split("?"))
+            {
+                if (s.IndexOf("filename") != -1) fileUrl = s.Split("=")[1]; 
+            }
+            string filePath = System.IO.Directory.GetCurrentDirectory() + "\\WebAsset\\" + fileUrl;
+            Console.WriteLine("文件路径为："+filePath);
+            if (System.IO.File.Exists(filePath)) {
+                var stream = System.IO.File.OpenRead(filePath);
+                string fileExt = "."+Path.GetFileName(filePath).Split(".")[1];
+                //获取文件的ContentType
+                var provider = new FileExtensionContentTypeProvider();
+                var memi = provider.Mappings[fileExt];
+                return File(stream, memi, Path.GetFileName(filePath));
+            }
+            else
+            {
+                return NotFound();
+            }
 		}
 
 		// GET: api/TodoItems/5

@@ -1,0 +1,340 @@
+CSDN首页
+博客
+下载
+学习
+社区
+GitCode
+InsCode
+c#
+ 搜索
+
+会员中心 
+消息
+历史
+创作中心
+
+c# 判断字符串中是否包含指定字符或字符串
+
+技术leader
+
+已于 2022-03-21 14:02:46 修改
+
+44299
+ 收藏 65
+分类专栏： C# 文章标签： c#
+版权
+
+华为云开发者联盟
+该内容已被华为云开发者联盟社区收录
+加入社区
+
+C#
+专栏收录该内容
+14 篇文章0 订阅
+订阅专栏
+今天写代码的过程中遇到了如题所述的问题，无奈一时想不起 indexof() 函数，有点提笔忘字的感觉。
+
+故将常用的方法记下来与君共享。
+
+一：使用string.Contains（str）方法
+String.Contains对大小写敏感，适用于区分大小写的判断。返回值为bool型
+
+二：使用sring.IndexOf（str）方法
+IndexOf 函数对大小写不敏感，适用于不区分大小写的判断。返回值为int型，str 在sring中的索引值
+
+var str = "abcdefg";
+ 
+str.Contains("Bcd")；//返回false
+str.Contains("bcd")；//返回true
+ 
+str.IndexOf("bc")；//返回1
+str.IndexOf("BC")；//返回1
+ 
+注意：对中文进行判断时，没有大小写之分string.Contains的效率更高些
+
+
+技术leader
+关注
+
+22
+
+
+65
+打赏
+
+7
+
+专栏目录
+C#判断字符串中是否包含指定字符串及contains与indexof方法效率问题
+08-26
+主要介绍了C#判断字符串中是否包含指定字符串及contains与indexof方法效率问题 ,文中给大家列举通过两种方法来判断，需要的朋友可以参考下
+C#判断一个字符串是否包含另一个字符串的方法
+09-03
+主要介绍了C#判断一个字符串是否包含另一个字符串的方法,涉及C#中IndexOf方法的使用技巧,非常简单实用,需要的朋友可以参考下
+7 条评论
+skipper-f
+热评
+IndexOf的重载函数在指定了比较模式参数为1、3、5才不区分大小写，Contains区分大小写。 public int IndexOf(String value, StringComparison comparisonType)
+namespace System
+{
+    //
+    // 摘要:
+    //     指定供 System.String.Compare(System.String,System.String) 和 System.String.Equals(System.Object)
+    //     方法的特定重载使用的区域性、大小写和排序规则。
+    [ComVisible(true)]
+    public enum StringComparison
+    {
+        //
+        // 摘要:
+        //     使用区分区域性的排序规则和当前区域性比较字符串。
+        CurrentCulture = 0,
+        //
+        // 摘要:
+        //     通过使用区分区域性的排序规则、当前区域性，并忽略所比较的字符串的大小写，来比较字符串。
+        CurrentCultureIgnoreCase = 1,
+        //
+        // 摘要:
+        //     使用区分区域性的排序规则和固定区域性比较字符串。
+        InvariantCulture = 2,
+        //
+        // 摘要:
+        //     通过使用区分区域性的排序规则、固定区域性，并忽略所比较的字符串的大小写，来比较字符串。
+        InvariantCultureIgnoreCase = 3,
+        //
+        // 摘要:
+        //     使用序号（二进制）排序规则比较字符串。
+        Ordinal = 4,
+        //
+        // 摘要:
+        //     通过使用序号（二进制）区分区域性的排序规则并忽略所比较的字符串的大小写，来比较字符串。
+        OrdinalIgn
+写评论
+C#检测字符串中是否含有指定字符的方法_c# 判断文字包含_禹晴的博客-C...
+4-27
+C#检测字符串中是否含有指定字符使用contains(contains的返回值为true或false)bool isContain=StringA.Contain("llo");使用IndexOf方法(IndexOfIndexOf方法是存在则返回所在的索引开始位置,否则返回-1。)string StringA="Hello World";var...
+c# 判断一个字符串是否包含另一个字符串_c# 字符串包含_天锋的博客...
+4-20
+C#开发过程中针对字符串String类型的操作是常见操作,有时候需要判断某个字符串是否包含在另一个字符串,此时可以使用IndexOf方法以及Contain方法来实现此功能,Contain方法返回True和False,而IndexOf方法可以返回所在的索引位置,如果为查找到对应...
+C#中的常用关键字及用法
+最新发布
+jiawei31191的博客
+ 299
+C# 中常用的一些关键字，掌握这些关键字可以帮助开发人员更好地控制程序的流程和语法规则。在实际的开发中，开发人员还需要了解更多的关键字和保留字，以便更好地进行编程。
+C#检查字符串是否包含某个字符
+xiaoxiaoxiaoyaoqueen的博客
+ 2654
+C#检查字符串是否包含某个字符 使用如下代码可以判断字符串是否包含某个字符： // An highlighted block if (System.Text.RegularExpressions.Regex.IsMatch("字符串","需要判断的字符")); ...
+【C#】判断字符串中是否包含指定字符串,contains与indexof方法效率问题...
+4-9
+1、从测试结果(大量测试)中能明显看出,当拥有大量英文的字符串中: *当不区分大小写时,string.IndexOf方法的效率明显高于string.Contains方法; *当区分大小写时,string.Contains方法的效率明显高于string.IndexOf方法; ...
+C#判断字符串中是否包含一个子字符串是可以直接使用Contains()方法_wei...
+4-26
+1. 以前判断一个字符串中是否包含另一个子字符串时,习惯使用 IndexOf(); stringstr ="ABC@QQ"; if(str.IndexOf("@")>=0){ //any other code } 2. 后来发现,原来C#中还定义了Contains()这样的方法,使用如下: ...
+
+
+【转载】C#通过IndexOf方法判断某个字符串是否包含在另一个字符串中
+weixin_30505485的博客
+ 656
+C#开发过程中针对字符串String类型的操作是常见操作，有时候需要判断某个字符串是否包含在另一个字符串，此时可以使用IndexOf方法以及Contain方法来实现此功能，Contain方法返回True和False，而IndexOf方法可以返回所在的索引位置，如果为查找到对应的字符串，则返回-1。 C#中字符串IndexOf方法的使用格式为：StringA.IndexOf(StringB)。Str...
+字符和字符串(3)——C#判断一个字符串是否包含另一个字符串
+qq_34573534的博客
+ 8425
+方法一： static void Main(string[] args) { string t1 = "去欧洲玩的你们还好吗"; string t2 = "洲玩"; if (t1.Contains(t2)) { Console.WriteLine("y...
+C#中怎样判断字符串中是否包含字符串(不区分大小写)
+BADAO_LIUMANG_QIZHI的博客
+ 2410
+场景 在winform中连接mysql数据库并执行相应的sql，需要判断sql字符串中是否指定的字符串比如 删表的关键字drop database等，而且还得不区分大小写，即包含大写和小写的都不被允许。 注： 博客：https://blog.csdn.net/badao_liumang_qizhi 关注公众号 霸道的程序猿 获取编程相关电子书、教程推送与免费下载。 实现 1、通过ToLower()将要比较的字符串全部转换为小写，然后进行比较 通过字符串的Contains方法判断字符串中是否包.
+C#开发之——查找字符串中的字符(4.3)
+我的博客
+ 4547
+一 概述 在字符串中查找是否含有某个字符串是常见的一个应用，例如在输入的字符串中查找特殊字符、获取某个字符串中的位置等 在C#中字符串的查找方法有IndexOf、LastIndexOf，IndexOf方法得到的是指定字符串在原字符串中第一次出现的位置，LastIndexOf方法得到的是指定字符串在查找的字符串中最后一次出现的位置 需要注意的是字符串中的每个字符的位置是从0开始的，只要指定的字符串在查找的字符串中不存在，结果都为-1 二 示例 2.1 示例一在 Main 方法中从控制台输入一个..
+C# 处理字符串中带有 / 和 "" 的情况
+爱已走到尽头 恨也放弃承诺
+ 7270
+ 我们在定义一个字符串的时候 其中可能带有 /  和  "" 的情况 这个时候应该怎么处理？？ 一般有2种常用的方法 1.使用  /   (转义字符)  如果字符串的值是 /123/   那么应该定义为 string str="//123//" ;               //PS:CSDN的编辑器太"智能"  一遇到  //   就认为是超链接 我汗   如果字符串的值是 "123"  那么应该定义为 string str="/"123/"" ;    /   (转义字符)   只要后面的不是什么r，
+C#判断字符串中是否包含有某个字符
+weixin_45966674的博客
+ 2426
+Contains方法 判断字符串中是否包含有指定字符 参数 任意一个字符串类型变量 返回结果 一个boolean类型 有包含则返回true 否则返回false EndsWith方法判断是否以某个字符结尾 参数 任意一个字符串类型变量 返回结果 一个boolean类型 是以指定字符结尾true 否则返回false StartsWith方法判断是否以某个字符开头 参数 任意一个字符串类型变量 返回结果 一个boolean类型 是以指定字符开头true
+C# 字符串中包含某字符
+weixin_30349597的博客
+ 769
+Info.Contains("a") 转载于:https://www.cnblogs.com/yubufan/p/4421300.html
+C#实现判断字符串中是否包含中文的方法
+09-04
+主要介绍了C#实现判断字符串中是否包含中文的方法,非常实用的功能,需要的朋友可以参考下
+c#中判断字符串是不是数字或字母的方法
+01-01
+判断汉字一般是输入 >255 因为汉字是大字符集二、判断输入的是不是数字 代码如下:try{int n = 0;n = int.Parse(this.textBox1.Text.Trim());}catch{MessageBox.Show(“你输入的不是数字~!”);}也可以用Char.is
+C# 判断字符串第一位是否为数字
+09-05
+C# 判断字符串第一位是否为数字，需要的朋友可以参考一下
+C#判断一个字符串是否是数字或者含有某个数字的方法
+01-20
+第一种就是 最常见的 用Try..Catch.. 再try中强转你要确认的string 类型 成功就是int catch 就不是  string a = avdfd; try { int b = int.Parse(a);...bool IsNumber = int.TryParse(你要判断的值,out int
+C# 判断字符串中是否含有指定字符串
+热门推荐
+Yonggie的博客
+ 1万+
+用contains example: using System; using System.Collections; using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks; namespace ConsoleApp1 { class P...
+【C#】判断字符串中是否包含指定字符或字符串（Contains/IndexOf）
+德仔
+ 1286
+【C#】判断字符串中是否包含指定字符或字符串（Contains/IndexOf）
+【C#学习笔记】如何判断一个字符串中是否包含某个字符串?
+祁连山下的小牧童的博客
+ 2010
+如何判断一个字符串中是否包含某个字符串? //因为使用了Regex，记得引用： using System.Text.RegularExpressions; //@input:想要查询匹配的断字符串 //@source:用于查询的长的字符串 private bool Char_Match(string input, string source) { bool result = false; Regex r = new Regex(input); Match m = r.Match
+C#中string字符串转list集合
+03-14
+C是一种编程语言，它是一种高级语言，也是一种通用语言。它由Dennis Ritchie在20世纪70年代初开发，被广泛应用于操作系统、编译器、数据库、网络和游戏等领域。C语言具有高效、灵活、可移植等特点，是学习计算机编程的重要基础。
+“相关推荐”对你有帮助么？
+
+非常没帮助
+
+没帮助
+
+一般
+
+有帮助
+
+非常有帮助
+关于我们
+招贤纳士
+商务合作
+寻求报道
+
+400-660-0108
+
+kefu@csdn.net
+
+在线客服
+工作时间 8:30-22:00
+公安备案号11010502030143
+京ICP备19004658号
+京网文〔2020〕1039-165号
+经营性网站备案信息
+北京互联网违法和不良信息举报中心
+家长监护
+网络110报警服务
+中国互联网举报中心
+Chrome商店下载
+账号管理规范
+版权与免责声明
+版权申诉
+出版物许可证
+营业执照
+©1999-2023北京创新乐知网络技术有限公司
+
+技术leader
+码龄5年
+ 暂无认证
+33
+原创
+8万+
+周排名
+88万+
+总排名
+14万+
+访问
+
+等级
+1273
+积分
+7
+粉丝
+50
+获赞
+27
+评论
+174
+收藏
+习惯养成
+求知
+受益良多
+签到新秀
+持续创作
+创作能手
+新人勋章
+阅读者勋章
+私信
+关注
+搜博主文章
+
+热门文章
+c# 判断字符串中是否包含指定字符或字符串  44179
+SQL 语句：将表中的数据查出更改某一字段的值后再插入该表  10015
+pgsql设置字段自增  9913
+.net (c#) 中八种实用 截取字符串的方法  5341
+使用css设置DIV固定悬浮  4852
+最新评论
+SQL 语句：将表中的数据查出更改某一字段的值后再插入该表
+技术leader: 语句本身是没什么问题的，看一下是不是数据或者字段名拼写错误；再一个这是sqlserver下的语句，其他数据库可能不支持
+
+SQL 语句：将表中的数据查出更改某一字段的值后再插入该表
+yann.bai: 同问，出现这个问题咋解决的呀
+
+SQL 语句：将表中的数据查出更改某一字段的值后再插入该表
+小肥鱼@: 咋更新的数据变为0了
+
+c# 判断字符串中是否包含指定字符或字符串
+skipper-f: IndexOf的重载函数在指定了比较模式参数为1、3、5才不区分大小写，Contains区分大小写。 public int IndexOf(String value, StringComparison comparisonType) [code=plain] namespace System { // // 摘要: // 指定供 System.String.Compare(System.String,System.String) 和 System.String.Equals(System.Object) // 方法的特定重载使用的区域性、大小写和排序规则。 [ComVisible(true)] public enum StringComparison { // // 摘要: // 使用区分区域性的排序规则和当前区域性比较字符串。 CurrentCulture = 0, // // 摘要: // 通过使用区分区域性的排序规则、当前区域性，并忽略所比较的字符串的大小写，来比较字符串。 CurrentCultureIgnoreCase = 1, // // 摘要: // 使用区分区域性的排序规则和固定区域性比较字符串。 InvariantCulture = 2, // // 摘要: // 通过使用区分区域性的排序规则、固定区域性，并忽略所比较的字符串的大小写，来比较字符串。 InvariantCultureIgnoreCase = 3, // // 摘要: // 使用序号（二进制）排序规则比较字符串。 Ordinal = 4, // // 摘要: // 通过使用序号（二进制）区分区域性的排序规则并忽略所比较的字符串的大小写，来比较字符串。 OrdinalIgn [/code]
+
+jquery选择器
+技术leader: 已修正，多谢表情包
+
+您愿意向朋友推荐“博客详情页”吗？
+
+强烈不推荐
+
+不推荐
+
+一般般
+
+推荐
+
+强烈推荐
+最新文章
+两次layer.open()同一个DIV，layer.open()回调函数中变量值还是第一次的数据。
+.net mvc 网站 css 和 js 文件加载不出来的问题
+PGSql新建表（包括主键自增的设置）、并根据另一张表批量插入数据
+2022年4篇2021年3篇2020年15篇2019年33篇
+
+
+
+
+分类专栏
+
+写在前面
+1篇
+
+数据库
+7篇
+
+C#
+14篇
+
+.netCore
+5篇
+
+JS+CSS+HTML
+10篇
+
+CSS
+3篇
+
+js的使用
+9篇
+
+Jquery
+1篇
+
+Ajax
+2篇
+
+jsTree
+4篇
+
+
+
+举报
