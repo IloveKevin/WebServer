@@ -1,0 +1,13 @@
+D:\Project\WebApiDemo\MyLog\bin\Debug\net6.0\nlog.config
+D:\Project\WebApiDemo\MyLog\bin\Debug\net6.0\MyLog.deps.json
+D:\Project\WebApiDemo\MyLog\bin\Debug\net6.0\MyLog.dll
+D:\Project\WebApiDemo\MyLog\bin\Debug\net6.0\MyLog.pdb
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\MyLog.csproj.AssemblyReference.cache
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\MyLog.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\MyLog.AssemblyInfoInputs.cache
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\MyLog.AssemblyInfo.cs
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\MyLog.csproj.CoreCompileInputs.cache
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\MyLog.dll
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\refint\MyLog.dll
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\MyLog.pdb
+D:\Project\WebApiDemo\MyLog\obj\Debug\net6.0\ref\MyLog.dll

@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Serialization;
+using NLog.Extensions.Logging;
 using WebApiDemo.Models;
+using Zack.Commons;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +15,8 @@ builder.Services.AddSwaggerGen(c =>
 {
 	c.SwaggerDoc("v1", new() { Title = "TodoApi", Version = "v1" });
 });
-
+var asms = ReflectionHelper.GetAllReferencedAssemblies();
+builder.Services.RunModuleInitializers(asms);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -552,3 +552,15 @@ D:\Project\WebServer\WebApiDemo\obj\Debug\net6.0\refint\WebApiDemo.dll
 D:\Project\WebServer\WebApiDemo\obj\Debug\net6.0\WebApiDemo.pdb
 D:\Project\WebServer\WebApiDemo\obj\Debug\net6.0\WebApiDemo.genruntimeconfig.cache
 D:\Project\WebServer\WebApiDemo\obj\Debug\net6.0\ref\WebApiDemo.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\AsmResolver.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\AsmResolver.DotNet.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\AsmResolver.PE.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\AsmResolver.PE.File.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\FluentValidation.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\System.Text.Json.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\Zack.Commons.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\nlog.config
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\NLog.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\MyLog.dll
+D:\Project\WebApiDemo\WebApiDemo\bin\Debug\net6.0\MyLog.pdb

@@ -1,0 +1,63 @@
+2023-05-29 13:49:18.9771|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7231 |url: |action: 
+2023-05-29 13:49:18.9771|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5229 |url: |action: 
+2023-05-29 13:49:18.9882|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-05-29 13:49:18.9882|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-05-29 13:49:18.9882|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\Project\WebApiDemo\WebApiDemo\ |url: |action: 
+2023-05-29 13:49:43.4244|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7231 |url: |action: 
+2023-05-29 13:49:43.4244|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5229 |url: |action: 
+2023-05-29 13:49:43.4244|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-05-29 13:49:43.4381|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-05-29 13:49:43.4381|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\Project\WebApiDemo\WebApiDemo\ |url: |action: 
+2023-05-29 13:49:50.7188|1|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApiDemo.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method3(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)|url: |action: 
+2023-05-29 13:52:24.5364|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7231 |url: |action: 
+2023-05-29 13:52:24.5364|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5229 |url: |action: 
+2023-05-29 13:52:24.5364|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-05-29 13:52:24.5463|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-05-29 13:52:24.5463|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\Project\WebApiDemo\WebApiDemo\ |url: |action: 
+2023-05-29 13:52:29.9406|1|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApiDemo.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method3(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)|url: |action: 
+2023-05-29 13:53:22.1524|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7231 |url: |action: 
+2023-05-29 13:53:22.1576|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5229 |url: |action: 
+2023-05-29 13:53:22.1576|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-05-29 13:53:22.1576|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-05-29 13:53:22.1576|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\Project\WebApiDemo\WebApiDemo\ |url: |action: 
+2023-05-29 13:53:32.1408|0|INFO|WebApiDemo.Controllers.AccountController|接口被调用 |url: |action: 
+2023-05-29 13:53:56.1670|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7231 |url: |action: 
+2023-05-29 13:53:56.1714|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5229 |url: |action: 
+2023-05-29 13:53:56.1714|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-05-29 13:53:56.1714|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-05-29 13:53:56.1714|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\Project\WebApiDemo\WebApiDemo\ |url: |action: 
+2023-05-29 13:54:52.5409|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7231 |url: |action: 
+2023-05-29 13:54:52.5409|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5229 |url: |action: 
+2023-05-29 13:54:52.5409|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-05-29 13:54:52.5409|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-05-29 13:54:52.5409|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\Project\WebApiDemo\WebApiDemo\ |url: |action: 
